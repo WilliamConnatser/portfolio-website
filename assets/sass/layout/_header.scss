@@ -89,6 +89,10 @@
 				letter-spacing: _font(letter-spacing);
 				font-size: 0.8rem;
 				line-height: 2;
+
+				br {
+					display: none;
+				}
 			}
 		}
 
@@ -114,7 +118,7 @@
 						min-width: 7.5rem;
 						height: 2.75rem;
 						line-height: 2.75rem;
-						padding: 0 1.25rem 0 (1.25rem + _font(letter-spacing));
+						padding: 0 1rem 0 (1rem + _font(letter-spacing));
 						text-transform: uppercase;
 						letter-spacing: _font(letter-spacing);
 						font-size: 0.8rem;
@@ -176,16 +180,6 @@
 			}
 		}
 
-		@include breakpoint('<=medium') {
-			.content {
-				p {
-					br {
-						display: none;
-					}
-				}
-			}
-		}
-
 		@include breakpoint('<=small') {
 			> * {
 				margin-top: 2rem;
@@ -215,6 +209,10 @@
 
 				p {
 					line-height: 1.875;
+
+					br {
+						display: block;
+					}
 				}
 			}
 		}
@@ -225,6 +223,12 @@
 			.content {
 				.inner {
 					padding: 2.5rem 0;
+				}
+
+				p {
+					br {
+						display: block;
+					}
 				}
 			}
 

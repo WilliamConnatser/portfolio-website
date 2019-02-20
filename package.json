@@ -2,10 +2,11 @@
   "name": "portfolio-website",
   "version": "1.0.0",
   "description": "With all of the projects you will be working on here at Lambda School, you will need somewhere to house them!  There is no better opportunity to learn and show off your skills than a beautiful portfolio website.",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "start": "live-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass": "node-sass assets/sass/main.scss assets/css/main.css -w",
+    "live-server": "live-server",
+    "start": "concurrently --names \"sass-compiler,live-server\" \"npm run compile:sass\" \"live-server\" -k"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/WilliamConnatser/portfolio-website/issues"
   },
-  "homepage": "https://github.com/WilliamConnatser/portfolio-website#readme"
+  "homepage": "https://github.com/WilliamConnatser/portfolio-website#readme",
+  "dependencies": {
+    "concurrently": "^4.1.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
 }
